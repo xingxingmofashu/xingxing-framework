@@ -1,0 +1,18 @@
+generator Client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("MSSQL_URL")
+}
+
+model SystemUser {
+  ID         String    @id(map: "PK__SystemUs__3214EC279A203CEF") @default(dbgenerated("newid()"), map: "DF__SystemUser__ID__2D27B809") @db.UniqueIdentifier
+  Account    String?   @unique(map: "[SystemUser]_[Account]_[uniqueKey]") @db.VarChar(255)
+  Password   String?   @db.VarChar(255)
+  CreateTime DateTime?
+  Creator    String?   @db.VarChar(255)
+  UpdateTime DateTime?
+  Updater    String?   @db.VarChar(255)
+}

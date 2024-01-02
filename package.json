@@ -1,0 +1,27 @@
+{
+  "name": "xingxing-framework",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.41",
+    "@iconify/json": "^2.2.161",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "^3.3.2",
+    "@unocss/nuxt": "^0.58.0",
+    "@vueuse/nuxt": "^10.7.0",
+    "nuxt": "^3.9.0",
+    "prisma": "^5.7.1",
+    "vue": "^3.3.13",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.1"
+  }
+}

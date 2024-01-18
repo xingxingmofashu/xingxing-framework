@@ -8,11 +8,50 @@ datasource db {
 }
 
 model SystemUser {
-  ID         String    @id(map: "PK__SystemUs__3214EC279A203CEF") @default(dbgenerated("newid()"), map: "DF__SystemUser__ID__2D27B809") @db.UniqueIdentifier
-  Account    String?   @unique(map: "[SystemUser]_[Account]_[uniqueKey]") @db.VarChar(255)
-  Password   String?   @db.VarChar(255)
-  CreateTime DateTime?
-  Creator    String?   @db.VarChar(255)
-  UpdateTime DateTime?
-  Updater    String?   @db.VarChar(255)
+  ID               String    @id(map: "PK__SystemUs__3214EC279A203CEF") @default(dbgenerated("newid()"), map: "DF__SystemUser__ID__2D27B809") @db.UniqueIdentifier
+  Account          String?   @unique @db.VarChar(255)
+  Password         String?   @db.VarChar(255)
+  CreateTime       DateTime?
+  CreatedBy        String?   @db.VarChar(255)
+  ModificationTime DateTime?
+  ModifiedBy       String?   @db.VarChar(255)
+}
+
+model Problemset {
+  ID                         String    @id(map: "PK__Problems__3214EC272199CAB9") @default(dbgenerated("newid()"), map: "DF__Problemset__ID__47DBAE45") @db.UniqueIdentifier
+  QuestionId                 String?   @db.VarChar(50)
+  QuestionFrontendId         String?   @db.VarChar(50)
+  Title                      String?   @db.VarChar(255)
+  TitleSlug                  String?   @db.VarChar(255)
+  IsPaidOnly                 Boolean?
+  Difficulty                 String?   @db.VarChar(255)
+  Likes                      Int?
+  Dislikes                   Int?
+  FK_ProblemsetCategories_ID String?   @db.UniqueIdentifier
+  CreateTime                 DateTime?
+  CreatedBy                  String?   @db.VarChar(255)
+  ModificationTime           DateTime?
+  ModifiedBy                 String?   @db.VarChar(255)
+}
+
+model ProblemsetCategories {
+  ID               String    @id(map: "PK__Problems__3214EC27ACB534DE") @db.UniqueIdentifier
+  Title            String?   @db.VarChar(255)
+  titleSlug        String?   @db.VarChar(255)
+  CategoryTitle    String?   @db.VarChar(255)
+  CreateTime       DateTime?
+  CreatedBy        String?   @db.VarChar(255)
+  ModificationTime DateTime?
+  ModifiedBy       String?   @db.VarChar(255)
+}
+
+model ProblemsetCategoriesInfo {
+  ID                         String    @id(map: "PK__Problems__3214EC2747BCCD73") @db.UniqueIdentifier
+  FK_ProblemsetCategories_ID String?   @db.UniqueIdentifier
+  TitleCn                    String?   @db.VarChar(255)
+  CategoryTitle              String?   @db.VarChar(255)
+  CreateTime                 DateTime?
+  CreatedBy                  String?   @db.VarChar(255)
+  ModificationTime           DateTime?
+  ModifiedBy                 String?   @db.VarChar(255)
 }

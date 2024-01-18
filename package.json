@@ -22,6 +22,9 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@prisma/client": "^5.7.1"
+    "@apollo/server": "^4.10.0",
+    "@as-integrations/h3": "^1.1.6",
+    "@prisma/client": "^5.7.1",
+    "graphql": "^16.8.1"
   }
 }

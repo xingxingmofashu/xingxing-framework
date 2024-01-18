@@ -1,6 +1,6 @@
 <script setup>
-import { all } from '~/composables/users'
-const users = await all();
+
+const users = await getAllUser();
 </script>
 <template>
     User Index

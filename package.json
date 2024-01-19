@@ -22,9 +22,12 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.9",
     "@apollo/server": "^4.10.0",
     "@as-integrations/h3": "^1.1.6",
     "@prisma/client": "^5.7.1",
-    "graphql": "^16.8.1"
+    "@vue/apollo-composable": "^4.0.0",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6"
   }
 }

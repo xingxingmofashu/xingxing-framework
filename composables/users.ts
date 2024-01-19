@@ -21,5 +21,5 @@ export const getAllUser = () => {
             }
         }
     `
-    return provideApolloClient(apolloClient)(() => useQuery(QueryUsers))
+    return provideApolloClient(userApolloClient)(() => useQuery(QueryUsers))
 }
